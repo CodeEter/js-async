@@ -1,12 +1,20 @@
-function Display(result) {
-  console.log(result);
+//Create an Array
+const Numbers = [4, 1, -20, -6, 5, 9, -6];
+
+//Call removeNeg with a callback
+const posNumbers = removeNeg(Numbers, (x) => x > 0);
+
+//Display Result
+console.log(posNumbers);
+
+//Kepp only positive numbers
+
+function removeNeg(numbers, callback) {
+  const Array = [];
+  for (const x of numbers) {
+    if (callback(x)) {
+      Array.push(x);
+    }
+  }
+  return Array;
 }
-
-function Calculator(num1, num2, Callback) {
-  let sum = num1 + num2;
-  Callback(sum);
-}
-
-Calculator(5, 5, Display);
-
-//When you pass a function as an argument, remember not to use parenthesis.
